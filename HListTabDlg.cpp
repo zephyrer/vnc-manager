@@ -397,7 +397,8 @@ void CHListTabDlg::OnNMRClickHostList(NMHDR *pNMHDR, LRESULT *pResult)
 
 						wchar_t paramRes_[0xff];
 						ZeroMemory(paramRes_, sizeof(wchar_t)*0xff);
-						wsprintf( paramRes_, L"/v:%s /admin /w:%d /h:%d", theApp.ctow(temp_.first).c_str(), theApp.m_iRemoteWidth, theApp.m_iRemoteHeight );
+						//wsprintf( paramRes_, L"/v:%s /admin /w:%d /h:%d", theApp.ctow(temp_.first).c_str(), theApp.m_iRemoteWidth, theApp.m_iRemoteHeight );
+						wsprintf( paramRes_, L"/v:%s /w:%d /h:%d", theApp.ctow(temp_.first).c_str(), theApp.m_iRemoteWidth, theApp.m_iRemoteHeight );
 						wstring str_(paramRes_);
 
 						::ShellExecute(NULL, L"", L"mstsc", str_.c_str(), L".\\", SW_SHOWNORMAL );
